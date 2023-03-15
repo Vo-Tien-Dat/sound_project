@@ -1,0 +1,23 @@
+.MenuItemSpace {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 8px 16px;
+	margin-bottom: 8px;
+	border: 1px solidr red;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.MenuItemActive {
+	background-color: white;
+}
+
+.MenuItemIcon {
+	display: inline;
+	margin-right: 8px;
+}
+
+.MenuItemLabel {
+	display: inline;
+}

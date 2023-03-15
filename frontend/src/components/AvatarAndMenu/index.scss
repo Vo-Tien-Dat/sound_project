@@ -1,0 +1,13 @@
+.AvatarAndMenuSpaceRoot {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	.AvatarSpace {
+		display: inline-block;
+	}
+
+	.MenuSpace {
+		position: absolute;
+		transform: translateX(calc(-100%));
+	}
+}

@@ -1,0 +1,28 @@
+.DefaultSearchSpace {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 8px 8px;
+	align-items: center;
+	border-radius: 8px;
+
+	.DefaultIconSearch {
+		margin: 4px;
+	}
+
+	.DefaultEditor {
+		border: none;
+		padding: 4px 8px;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.DefaultIconX {
+		margin-left: 4px;
+	}
+	.hidden {
+		visibility: hidden;
+	}
+}

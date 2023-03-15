@@ -1,0 +1,23 @@
+.UserAvatarAndNameSpace {
+	background: {
+		color: #fff;
+	}
+	overflow: hidden;
+	border-radius: 4px;
+	transition: ease 0.25s;
+	transition-timing-function: linear;
+
+	&:hover {
+		background: {
+			color: #f5f5f5;
+		}
+	}
+}
+
+.UserNameTypography {
+	font: {
+		size: 16px;
+		weight: 500;
+	}
+	color: black;
+}

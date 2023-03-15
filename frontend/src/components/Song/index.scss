@@ -1,0 +1,17 @@
+.SongSpace {
+	width: 100%;
+	background-color: #959595;
+	border-radius: 8px;
+	padding: 8px 16px;
+	margin-bottom: 4px;
+	justify-content: space-between;
+	&:hover {
+		background-color: #959595;
+	}
+	.SongItemFullFill {
+		flex-grow: 1;
+	}
+	.SongItemWrapContent {
+		flex-grow: 0;
+	}
+}

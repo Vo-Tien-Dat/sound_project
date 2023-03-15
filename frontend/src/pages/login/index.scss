@@ -1,0 +1,40 @@
+.LoginSpace {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: {
+		image: url('../../assets/login_image.jpg');
+		postion: center;
+		repeat: no-repeat;
+		size: cover;
+	}
+}
+
+.LoginFormOverride {
+	background-color: white;
+	border: {
+		style: solid;
+		width: 1px;
+		color: #999;
+		radius: 8px;
+	}
+	padding: 16px 32px;
+}
+
+.LoginFormItemOverride {
+	margin-bottom: 8px;
+	.InputOverride {
+		padding: 8px 12px;
+	}
+
+	.SubmitedTypographyOverride {
+		color: #fff !important;
+		font: {
+			size: 16px;
+			weight: 500;
+		}
+	}
+}

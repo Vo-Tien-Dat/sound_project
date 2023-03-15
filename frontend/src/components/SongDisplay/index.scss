@@ -1,0 +1,80 @@
+.SongDisplaySpace {
+	display: flex;
+	width: 100vw;
+	height: auto;
+	position: fixed;
+	bottom: 0px;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #959595;
+	padding: 8px 16px;
+}
+
+.SongCurrentTime {
+}
+
+.SongProgress {
+	border: 4px solid green;
+	width: 300px;
+	background-color: green;
+	border-radius: 8px;
+}
+
+.SongProgressBar {
+}
+
+.SongControl {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.SongPlay {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	border: 2px solid #ffffff;
+	&:hover {
+		background-color: #959595;
+	}
+}
+
+.SongDurationTime {
+}
+
+.SongProgressVolume {
+	width: 92px;
+	height: 4px;
+	background-color: #ffffff;
+	border-radius: 8px;
+	display: block;
+	.SongProgressBarVolume {
+		display: none;
+		background-color: green;
+		border-radius: 8px;
+		width: 100%;
+		height: 100%;
+	}
+	&:hover {
+		.SongProgressBarVolume {
+			display: block;
+		}
+	}
+}
+
+.SongNameTypography {
+	color: white;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.SongAuthorTypography {
+	color: white;
+	font-weight: 500;
+	font-size: 12px;
+}

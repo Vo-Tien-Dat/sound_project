@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
+
+// size >= 576px
+$small: 576px;
+
+// size >= 768px
+$medium: 768px; 
+
+// size >= 992px
+$large: 992px;
+
+// size >= 1200px
+$x-large: 1200px; 
+
+// size >= 1400px
+$xx-large: 1400px; 
+
+.container{
+  
+}
+
+.container-sm{
+
+}
+
+.container-md{ 
+
+}
+
+
+.container-lg{
+
+}
+
+.container-xl{
+
+}
+
+.container-xxl{
+
+}
+
+.container-fluid{
+  
+}
+
+@media screen  and (max-width: $small){
+  
+}
+
+@media  screen and (min-width: $small) and (max-width: $medium) {
+  
+}
+
+
+@media  screen and (min-width: $medium) and (max-width: $large) {
+  
+}
+
+@media  screen and (min-width: $large) and (max-width: $x-large) {
+  
+}
+
+@media screen and (min-width: $x-large) and (max-width: $xx-large){
+
+}
+
+@media  screen and (min-width: $xx-large){
+  
+}

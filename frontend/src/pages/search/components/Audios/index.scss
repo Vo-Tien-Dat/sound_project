@@ -1,0 +1,10 @@
+.AudiosSpace {
+	display: block;
+	&:last-child {
+		margin-bottom: 0px;
+	}
+
+	.LayoutAudioItem {
+		margin-bottom: 8px;
+	}
+}

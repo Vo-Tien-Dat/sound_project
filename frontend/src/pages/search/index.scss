@@ -1,0 +1,25 @@
+.SearchSpace {
+	display: block;
+	width: 100%;
+}
+
+.SearchItemSpace {
+	display: block;
+	width: 100%;
+	padding: 16px;
+
+	.Title {
+		font: {
+			size: 24px;
+			weight: 600;
+		}
+	}
+	.Content {
+		min-height: 56px;
+		background-color: white;
+		width: 100%;
+		overflow: hidden;
+		display: block;
+		// background-color: #959595;
+	}
+}

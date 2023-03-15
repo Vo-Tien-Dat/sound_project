@@ -1,0 +1,22 @@
+.RootLayoutOverride {
+	height: 100vh !important;
+
+	.HeaderAndContentLayoutOverride {
+		display: block;
+		overflow-y: auto;
+		position: relative;
+		.HeaderLayoutOverride {
+			display: flex;
+			position: fixed	;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+			z-index: 100;
+		}
+
+		.ContentLayoutOverride {
+			padding-top: 100px;
+			margin-top: 0px;
+		}
+	}
+}
