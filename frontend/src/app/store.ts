@@ -3,11 +3,12 @@ import audioSlice from './reducers/audioSlice';
 import albumSlice from './reducers/albumSlice';
 import userSlice from './reducers/userSlice';
 import authSlice from './reducers/authSlice';
-import  songSlice  from './reducers/songSlice';
-import playlistSlice from './reducers/playlistSlice'; 
+import songSlice from './reducers/songSlice';
+import playlistSlice from './reducers/playlistSlice';
+import searchSlice from './reducers/searchSlice';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from '../middleware/rootSaga';
-
+import homeSlice from './reducers/homeSlice';
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
@@ -17,7 +18,9 @@ export const store = configureStore({
 		user: userSlice,
 		auth: authSlice,
 		song: songSlice,
-		playlist: playlistSlice
+		playlist: playlistSlice,
+		search: searchSlice,
+		home: homeSlice
 	},
 	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware)
 });

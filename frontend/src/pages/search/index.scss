@@ -1,25 +1,46 @@
-.SearchSpace {
-	display: block;
-	width: 100%;
+.search-space {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	padding: 16px;
+	gap: 16px;
 }
 
-.SearchItemSpace {
-	display: block;
-	width: 100%;
-	padding: 16px;
+.search__label {
+	font-size: 24px;
+	font-weight: 700;
+}
 
-	.Title {
-		font: {
-			size: 24px;
-			weight: 600;
+.search-space__top-result {
+	grid-column: span 2 / span 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.search-space__song {
+	grid-column: span 3 / span 3;
+}
+
+.search-space__other-content {
+	grid-column: span 5 / span 5;
+	height: 500px;
+	.search-space_other_content--item {
+		display: flex;
+
+		.content {
+			display: block;
 		}
 	}
-	.Content {
-		min-height: 56px;
-		background-color: white;
-		width: 100%;
-		overflow: hidden;
-		display: block;
-		// background-color: #959595;
-	}
+}
+.label {
+	display: block;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.song-space {
+	display: block;
+}
+
+.song-space-item {
+	width: 100%;
 }

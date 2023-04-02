@@ -8,6 +8,7 @@ import { PlaylistModule } from 'src/apis/playlist/playlist.module';
 import { UserModule } from 'src/apis/user/user.module';
 import { SongModule } from 'src/apis/song/song.module';
 import { SearchModule } from 'src/apis/search/search.module';
+import { HomeModule } from 'src/apis/home/home.module';
 
 @Module({
     imports: [
@@ -25,7 +26,8 @@ import { SearchModule } from 'src/apis/search/search.module';
         PlaylistModule,
         UserModule,
         SongModule,
-        SearchModule
+        SearchModule,
+        HomeModule,
     ],
     providers: [AppService],
 })

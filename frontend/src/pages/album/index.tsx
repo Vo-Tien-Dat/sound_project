@@ -12,11 +12,10 @@ import { Song as SongInterface } from '../../models/song';
 import { Song } from '../../components/Song';
 import { AvatarAndUserName } from '../../components/AvatarAndUserName';
 export const Album: FC = () => {
-	console.log('render');
 	const album = useSelector<RootState, any>(state => {
-		console.log(state.album);
 		return state.album;
 	});
+
 	const songs = useSelector<RootState, any>(state => state.song);
 	const dispatch = useDispatch();
 	const handleAlbumFavorite = () => {
@@ -37,8 +36,8 @@ export const Album: FC = () => {
 	};
 
 	useEffect(() => {
-		getData();
-	}, [songs]);
+		//getData();
+	}, []);
 
 	const [isLiked, setLiked] = useState(false);
 	const albumName = 'hello world';
@@ -77,13 +76,30 @@ export const Album: FC = () => {
 					<Button shape="circle" icon={<FontAwesomeIcon icon={faPlay} />}></Button>
 					<FontAwesomeIcon icon={isLiked ? faHeartSolid : faHeartRegular} onClick={handleAlbumFavorite} />
 				</Space>
-				<Space
-					direction="vertical"
-					style={{
-						width: '100%',
-						padding: '16px'
-					}}
-				>
+				<div className="LabelSongSpace">
+					<Typography
+						style={{
+							flexGrow: '0'
+						}}
+					>
+						#
+					</Typography>
+					<Space
+						style={{
+							flexGrow: '1'
+						}}
+					>
+						<Typography>Title</Typography>
+					</Space>
+					<Typography
+						style={{
+							flexGrow: '0'
+						}}
+					>
+						Time
+					</Typography>
+				</div>
+				<Space direction="vertical" className="ListedSongSpace">
 					{songs.map((songValue: SongInterface, index: number) => {
 						const { songName, songTime } = songValue;
 						return <Song songPosition={index} songName={songName} songTime={songTime} />;

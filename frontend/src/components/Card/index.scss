@@ -1,6 +1,7 @@
 .CardSpace {
-	display: inline-block;
-	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
 	border: 0.5px solid #959595;
 	border-radius: 8px;
 	&:hover {
@@ -8,28 +9,74 @@
 	}
 
 	.Image {
-		height: 200px;
-		width: 200px;
+		height: 100%;
+		width: 100%;
 		border-radius: 8px;
+		border: 1px solid #959595;
+		min-width: 72px;
 	}
 
 	.Shape {
 		border-radius: 50%;
 	}
 
-	.Title {
-		margin: {
-			top: 8px;
-		}
-		font: {
-			size: 20px;
-			weight: 500;
-		}
-	}
-
 	.Content {
 		margin: {
 			top: 4px;
 		}
+		.Title {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			margin: {
+			}
+			font: {
+				size: 16px;
+				weight: 500;
+			}
+		}
 	}
+}
+
+.card {
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #c6c6c6;
+	border-radius: 8px;
+}
+
+.card:hover {
+	background-color: #959595;
+	padding: 16px;
+}
+
+.card__image {
+	height: 100%;
+	width: 100%;
+	min-width: 72px;
+	border-radius: 8px;
+}
+
+.card__content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.card__title {
+	width: 200px;
+	&--typography {
+		font-size: 16px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.card__details {
+	overflow: hidden;
+	line-height: 12px;
+	height: 24px;
 }

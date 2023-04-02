@@ -27,8 +27,7 @@ export const albumSlice = createSlice({
 		addAlbumFavorite: (state, action: PayloadAction<Required<Pick<Album, 'albumId'>>>) => {},
 		updateAlbum: (state, action: PayloadAction<any>) => {
 			const { payload } = action;
-			state = payload;
-			console.log(payload);
+			state[0].albumId = 'test'; 
 		}
 	}
 });

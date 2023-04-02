@@ -1,108 +1,95 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Space, Col, Row, Typography } from 'antd';
+import { Space, Col, Row, Typography, Grid } from 'antd';
 import './index.scss';
-
 import { Audios } from './components/Audios';
 import { AudioProps } from '../../components/Audio/AudioProps';
 import { Cards } from '../../components/Cards';
 import { useDispatch, useSelector } from 'react-redux';
 import { audioSlice } from '../../app/reducers/audioSlice';
 import { RootState } from '../../app/store';
-
-const data: AudioProps[] = [
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	},
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	},
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	},
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	},
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	},
-	{
-		srcImage: '',
-		audioName: 'Set time out',
-		audioAuthor: 'adele',
-		audioTime: '4:02',
-		heartStatus: true
-	}
-];
-
+import { Song } from '../../models/song';
+import { Song as SongComponent } from '../../components/Song';
+import { loadingData } from '../../app/reducers/searchSlice';
+import { TopResult } from '../../components/TopResult';
+import { Content } from '../../app/reducers/searchSlice';
+import type { Card as CardProps } from '../../app/reducers/searchSlice';
+import { Card as CardComp } from '../../components/Card';
+import { Album } from '../../models/album';
+import { User } from '../../models/user';
+const { useBreakpoint } = Grid;
 export const Search: FC = () => {
-	return (
-		<Space direction="vertical" size="large" className="SearchSpace">
-			<Space className="SearchItemSpace">
-				<Row justify="space-between" align="top" gutter={16}>
-					<Col span="10">
-						<Space direction="vertical">
-							<Typography className="Title">Top Results</Typography>
-							<Space className="Content"></Space>
-						</Space>
-					</Col>
-					<Col span="14">
-						<Space
-							direction="vertical"
-							style={{
-								width: '100%'
-							}}
-						>
-							<Typography className="Title">Audio</Typography>
-							<Space className="Content">
-								<Audios data={data} itemNumber={4} />
-							</Space>
-						</Space>
-					</Col>
-				</Row>
-			</Space>
+	const screen = useBreakpoint();
+	const songs = useSelector<RootState, any>(state => state.search.songs);
+	const album = useSelector<RootState, any>(state => state.search.album);
+	const topResult = useSelector<RootState, any>(state => state.search.topResult);
+	const contents = useSelector<RootState, Content[] | undefined>(state => state.search.contents);
+	const dispatch = useDispatch();
 
-			<Space className="SearchItemSpace">
-				<Typography className="Title">Singer</Typography>
-				<Space className="Content">
-					<Cards />
-				</Space>
-			</Space>
-			<Space className="SearchItemSpace">
-				<Typography className="Title">Album</Typography>
-				<Space className="Content">hello</Space>
-			</Space>
-			<Space className="SearchItemSpace">
-				<Typography className="Title">Playlist</Typography>
-				<Space className="Content">hello</Space>
-			</Space>
-			<Space className="SearchItemSpace">
-				<Typography className="Title">Podcast</Typography>
-				<Space className="Content">hello</Space>
-			</Space>
-			<Space className="SearchItemSpace">
-				<Typography className="Title">Podcast</Typography>
-				<Space className="Content">hello</Space>
-			</Space>
-		</Space>
+	useEffect(() => {
+		dispatch(loadingData('test'));
+	}, []);
+
+	return (
+		<div className="search-space">
+			<div className="search-space__top-result">
+				<Typography className="search__label">Top result</Typography>
+				<TopResult />
+			</div>
+
+			<div className="search-space__song">
+				<div className="search-space__song-content">
+					<Typography className="search__label">Song</Typography>
+					<div
+						className="song-space"
+						style={{
+							width: '100%!important'
+						}}
+					>
+						{songs.map((currentValue: Song, index: number) => {
+							const { songId, songName, songAuthor, songTime } = currentValue;
+							return (
+								<div className="song-space-item" key={index}>
+									<SongComponent songPosition={index} songName={songName} songTime={songTime} />
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			</div>
+
+			<div className="search-space__other-content">
+				{contents !== undefined &&
+					contents.map((contentValue: Content, index: number) => {
+						const { label, cards } = contentValue;
+						return (
+							<div key={index} className="search-space__other-content--item">
+								<div className="search-space__other-content--item label">{label}</div>
+								<div
+									className="search-space__other-content--item content"
+									style={{
+										display: 'grid',
+										gridTemplateColumns: 'repeat(5, minmax(0, 1fr))'
+									}}
+								>
+									{cards !== undefined &&
+										cards.map((cardValue: CardProps, index: number) => {
+											const { userName }: any = cardValue;
+											const { albumName }: any = cardValue;
+											console.log(cardValue);
+											const { cardTitle } = {
+												['cardTitle']: albumName | userName
+											};
+											return (
+												<div className="ms-space-item-card">
+													<CardComp cardTitle={'hello world'} />
+												</div>
+											);
+										})}
+								</div>
+							</div>
+						);
+					})}
+			</div>
+		</div>
 	);
 };

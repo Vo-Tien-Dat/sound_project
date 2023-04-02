@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState } from 'react';
+import React, { FC, Fragment, useState, useEffect } from 'react';
 import { Space } from 'antd';
 import { SiderProps } from './SiderProps';
 import './index.scss';
@@ -16,15 +16,35 @@ export const Sider: FC<SiderProps> = props => {
 	const { items, initKey } = { ...DefaultSiderProps, ...props };
 	const [isSelectedItem, setSelectedItem] = useState<number>(initKey);
 
-	const hanldeRedirection = (url: string) => {
+	const [history, setHitory] = useState(window.location.pathname);
+
+	const hanldeRedirection = (url: string | undefined) => {
 		if (url !== undefined) {
 			navigate(url);
 		}
 	};
 
+	const handleChangedUrl = (eventUrl: string) => {
+		const defaultKey = "hello world"; 
+		items !== undefined &&
+			items.map((currentValue: MenuItemProps, index: number) => {
+				const { key, url } = currentValue;
+				const newKey = key || index;
+				const newUrl = `/${url}`;
+				eventUrl === newUrl && setSelectedItem(newKey);
+			});
+	};
+
 	const handleSelectedItem = (key: number, url: string | undefined) => {
 		setSelectedItem(key);
+		hanldeRedirection(url);
 	};
+
+	useEffect(() => {
+		setHitory(window.location.pathname);
+		handleChangedUrl(history);
+	}, [history]);
+
 	return (
 		<Space className="SiderSpace" direction="vertical">
 			{items !== undefined &&

@@ -1,12 +1,24 @@
 .AlbumPageSpace {
 	width: 100%;
-	border: 1px solid red;
 }
 
 .AlbumInformationSpace {
 	width: 100%;
+	padding: 0px 16px;
 }
 
 .ListedSongInAlbum {
 	width: 100%;
+	padding: 0px 16px;
+	.LabelSongSpace {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		border-bottom: 1px solid #959595;
+		gap: 8px;
+		padding: 0px 16px;
+	}
+	.ListedSongSpace {
+		width: 100%;
+	}
 }

@@ -40,10 +40,17 @@ export const songSlice = createSlice({
 	reducers: {
 		readSong: (state, action) => {},
 		handleIsFavorite: (state, action) => {},
-		readListSong: (state, action) => {}
+		readListSong: (state, action) => {
+			const { payload } = action;
+			state.push({
+				songName: 'hello world',
+				songSrcImage: 'test',
+				songTime: '19:20'
+			});
+		}
 	}
 });
 const { reducer, actions } = songSlice;
-export const { readSong } = actions;
+export const { readSong, readListSong } = actions;
 
 export default reducer;

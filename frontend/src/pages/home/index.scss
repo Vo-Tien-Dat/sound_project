@@ -1,0 +1,28 @@
+.HomeSpace {
+	padding: 8px;
+	width: 100%;
+}
+
+.home-content {
+	padding: 8px 16px;
+	width: 100%;
+}
+
+.home-content__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.home-content__title {
+	font-size: 24px;
+}
+
+.home-content__expanded {
+	font-size: 16px;
+}
+
+.home-content__content {
+	display: grid;
+}

@@ -15,15 +15,20 @@ const square: string[] = ['square', 'undefined'];
 export const Card: FC<CardPropsPreview> = props => {
 	const { cardTitle, shape, srcImage } = { ...CardRequiredProps, ...props };
 	return (
-		<Space className="CardSpace">
+		<Space className="card">
 			<Image
 				preview={false}
-				className={`Image ${(typeof shape).includes('square', undefined) ? 'square' : 'circle'}`}
+				//className={`Image ${(typeof shape).includes('square', undefined) ? 'square' : 'circle'}`}
+				className="card__image"
 				src={srcImage}
 			/>
-			<Typography className="Title">{cardTitle}</Typography>
-			<Space className="Content">
-				{/* {typeof props.children === 'string' ? <Typography>{children}</Typography> : <>{children}</>} */}
+			<Space direction="vertical" className="card__content">
+				<Space className="card__title">
+					<Typography className="card__title card__title--typography">{cardTitle}</Typography>
+				</Space>
+				<Space>
+					<Typography className="card__details">ddddddddddddd</Typography>
+				</Space>
 			</Space>
 		</Space>
 	);

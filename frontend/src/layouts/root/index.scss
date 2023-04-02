@@ -6,16 +6,18 @@
 		overflow-y: auto;
 		position: relative;
 		.HeaderLayoutOverride {
+
 			display: flex;
-			position: fixed	;
+			position: fixed;
 			flex-direction: row;
 			align-items: center;
 			width: 100%;
 			z-index: 100;
+			padding: 0px!important;
 		}
 
 		.ContentLayoutOverride {
-			padding-top: 100px;
+			padding: 16px 0px;
 			margin-top: 0px;
 		}
 	}
