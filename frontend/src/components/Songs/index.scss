@@ -1,0 +1,11 @@
+@import '../../variables';
+@import '../../colors';
+.songs-space {
+	display: $flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.songs-space-item {
+	display: block;
+}

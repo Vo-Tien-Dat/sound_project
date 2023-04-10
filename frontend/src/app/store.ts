@@ -9,6 +9,7 @@ import searchSlice from './reducers/searchSlice';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from '../middleware/rootSaga';
 import homeSlice from './reducers/homeSlice';
+import usersSlice from './reducers/usersSlice';
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
@@ -20,7 +21,8 @@ export const store = configureStore({
 		song: songSlice,
 		playlist: playlistSlice,
 		search: searchSlice,
-		home: homeSlice
+		home: homeSlice,
+		users: usersSlice
 	},
 	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware)
 });

@@ -44,7 +44,6 @@ export const audioSlice = createSlice({
 	initialState: initialState,
 	reducers: {
 		getData: (state, action) => {
-			console.log('oke');
 		},
 
 		startAddFavoriteAudio: (state, aciton: PayloadAction<any>) => {},

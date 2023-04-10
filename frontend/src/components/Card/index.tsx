@@ -1,35 +1,63 @@
 import React, { FC, ReactNode } from 'react';
 
-import { CardProps, Space, Typography } from 'antd';
+import { Typography, Skeleton } from 'antd';
 import './index.scss';
-import { Avatar } from 'antd';
 import { Image } from 'antd';
 import { CardPropsPreview, CardRequiredProps } from './CardRequiredProps';
-
-const CardComponentChildren: FC<any> = (children: any) => {
-	return typeof children === 'string' ? <Typography>{children}</Typography> : <>{children}</>;
-};
 
 const square: string[] = ['square', 'undefined'];
 
 export const Card: FC<CardPropsPreview> = props => {
-	const { cardTitle, shape, srcImage } = { ...CardRequiredProps, ...props };
+	const { skeleton, skeletonActive, cardTitle, shape, srcImage, cardDetails } = { ...CardRequiredProps, ...props };
 	return (
-		<Space className="card">
-			<Image
-				preview={false}
-				//className={`Image ${(typeof shape).includes('square', undefined) ? 'square' : 'circle'}`}
-				className="card__image"
-				src={srcImage}
-			/>
-			<Space direction="vertical" className="card__content">
-				<Space className="card__title">
-					<Typography className="card__title card__title--typography">{cardTitle}</Typography>
-				</Space>
-				<Space>
-					<Typography className="card__details">ddddddddddddd</Typography>
-				</Space>
-			</Space>
-		</Space>
+		<div className="card">
+			{(skeleton === true && (
+				<Skeleton.Avatar
+					active={skeletonActive}
+					style={{
+						width: '100%',
+						paddingTop: '100%',
+						borderRadius: '8px'
+					}}
+					shape="square"
+				></Skeleton.Avatar>
+			)) ||
+				(srcImage !== undefined && <Image preview={false} className="card__image" src={srcImage} />) || (
+					<Skeleton.Avatar
+						active={skeletonActive}
+						style={{
+							width: '100%',
+							paddingTop: '100%',
+							borderRadius: '8px'
+						}}
+						shape="square"
+					></Skeleton.Avatar>
+				)}
+			<div className="card__content">
+				{cardTitle !== undefined && skeleton !== true ? (
+					<Typography className="card__title">{cardTitle}</Typography>
+				) : (
+					<Skeleton.Input
+						active={skeletonActive}
+						style={{
+							borderRadius: '16px',
+							width: '100%'
+						}}
+						size="small"
+					></Skeleton.Input>
+				)}
+				{cardDetails !== undefined && skeleton !== true ? (
+					<Typography className="card__details">{cardDetails}</Typography>
+				) : (
+					<Skeleton.Input
+						style={{
+							borderRadius: '16px'
+						}}
+						active={skeletonActive || false}
+						size="small"
+					></Skeleton.Input>
+				)}
+			</div>
+		</div>
 	);
 };

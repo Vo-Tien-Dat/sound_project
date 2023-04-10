@@ -6,7 +6,6 @@ export function* workerReadSongForUser() {
 	try {
 		
 	} catch (error) {
-		console.log(error);
 	}
 }
 

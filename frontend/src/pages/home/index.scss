@@ -1,28 +1,29 @@
-.HomeSpace {
-	padding: 8px;
-	width: 100%;
-}
+@import '../../variables';
+@import '../../colors';
 
-.home-content {
-	padding: 8px 16px;
-	width: 100%;
-}
-
-.home-content__header {
+.ms-home-space {
+	height: 100%;
 	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+.ms-home-content {
+	padding: $p-2;
+}
+
+.ms-home-content__header {
+	display: $flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
+	width: $w-100;
 }
 
-.home-content__title {
+.ms-home-content__title {
 	font-size: 24px;
 }
 
-.home-content__expanded {
-	font-size: 16px;
-}
-
-.home-content__content {
-	display: grid;
+.ms-home-content__expanded {
+	font-size: $text-base;
 }

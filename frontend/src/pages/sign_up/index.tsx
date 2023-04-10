@@ -3,7 +3,6 @@ import { Space, Form, Input, Checkbox, Button, Typography, DatePicker } from 'an
 import type { DatePickerProps } from 'antd';
 import './index.scss';
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-	console.log(date, dateString);
 };
 export const SignUp: FC = () => {
 	return (

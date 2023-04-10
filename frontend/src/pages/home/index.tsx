@@ -4,11 +4,11 @@ import { Layout, Space, Typography, Grid } from 'antd';
 import './index.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../app/store';
-import { current } from '@reduxjs/toolkit';
 import { ContentState } from '../../app/reducers/homeSlice';
 import { Card } from '../../components/Card';
 import { Album } from '../../models/album';
 import Math from '../../utils/constants/math';
+import { loadingDataPending } from '../../app/reducers/homeSlice';
 import {
 	CARD_VIEW_NUMBER_XS,
 	CARD_VIEW_NUMBER_SM,
@@ -17,9 +17,11 @@ import {
 	CARD_VIEW_NUMBER_XXL,
 	CARD_VIEW_NUMBER_XL
 } from '../../utils/constants/constant';
+import { Cards } from '../../components/Cards';
 const { useBreakpoint } = Grid;
 const Home: FC = () => {
 	const contents = useSelector<RootState, any>(state => state.home.contents);
+	const dispatch = useDispatch();
 	const [cards, setCards] = useState<number>(CARD_VIEW_NUMBER_XS);
 	const screen = useBreakpoint();
 	useEffect(() => {
@@ -47,48 +49,44 @@ const Home: FC = () => {
 			default:
 		}
 	}, [screen]);
+	useEffect(() => {
+		const test = 'test';
+		dispatch(loadingDataPending({ test }));
+	}, []);
 
 	return (
-		<Space direction="vertical" className="HomeSpace">
+		<div className="ms-home-space">
 			{contents.map((currentValue: ContentState, index: number) => {
-				const { name, albums } = currentValue;
+				const { title, albums } = currentValue;
 				const albumsLen: number = albums.length || 0;
 				const hideExpandedContent: boolean = albumsLen > cards;
 				return (
-					<Space key={index} direction="vertical" className="home-content">
-						<Space direction="horizontal" className="home-content__header">
-							<Typography className="home-content__title">{name}</Typography>
+					<div key={index} className="ms-home-content">
+						<Space direction="horizontal" className="ms-home-content__header">
+							<Typography className="ms-home-content__title">{title}</Typography>
 							{hideExpandedContent && (
 								<Typography>
-									<a href="" className="home-content__expanded">
+									<a href="" className="ms-home-content__expanded">
 										See All
 									</a>
 								</Typography>
 							)}
 						</Space>
-						<Space
-							className="home-content__content"
-							style={{
-								display: 'grid',
-								gridTemplateColumns: `repeat(${cards}, minmax(0,1fr))`
-							}}
-						>
+
+						<Cards col={5}>
 							{albums.map((currentValue: Album, index: number) => {
 								const { albumId, albumName, albumAuthor } = currentValue;
-
 								return (
 									index < Math.min(cards, albums.length) && (
-										<div className="ms-space-item-card">
-											<Card cardTitle={albumName} />
-										</div>
+										<Card cardTitle={albumName} cardDetails={albumAuthor} />
 									)
 								);
 							})}
-						</Space>
-					</Space>
+						</Cards>
+					</div>
 				);
 			})}
-		</Space>
+		</div>
 	);
 };
 

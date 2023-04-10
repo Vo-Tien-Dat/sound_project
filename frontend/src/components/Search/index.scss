@@ -1,28 +1,37 @@
-.DefaultSearchSpace {
-	background-color: #ffffff;
+.ms-search-space {
+	display: inline-block;
+	background-color: white;
+	padding: 8px 16px;
+	border-radius: 16px;
+	border: 1px solid #959595;
+}
+
+.ms-search-space__parent {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	padding: 8px 8px;
+	justify-content: flex-start;
 	align-items: center;
-	border-radius: 8px;
+	gap: 4px;
+}
 
-	.DefaultIconSearch {
-		margin: 4px;
-	}
+.ms-search-space__icon-search {
+	flex-grow: 0;
+}
 
-	.DefaultEditor {
-		border: none;
-		padding: 4px 8px;
-		&:focus {
-			outline: none;
-		}
+.ms-search-space__editor {
+	border: none;
+	flex-grow: 1;
+	min-width: 56px;
+	padding: 4px 8px;
+	&:focus {
+		outline: none;
 	}
+}
 
-	.DefaultIconX {
-		margin-left: 4px;
-	}
-	.hidden {
-		visibility: hidden;
-	}
+.ms-search-space__icon-x {
+	flex-grow: 0;
+	margin-left: 4px;
+}
+.hidden {
+	visibility: hidden;
 }

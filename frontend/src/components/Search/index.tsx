@@ -8,7 +8,7 @@ import { SearchProps } from './SearchProps';
 export const Search: FC<SearchProps> = props => {
 	const [isHiddenXIcon, setHiddenXIcon] = useState(true);
 	const [searchValue, setSeachValue] = useState('');
-	const { placeholder, getData } = props;
+	const { className, style, placeholder, getData } = props;
 
 	const handleGetData = () => {
 		if (getData !== undefined) {
@@ -34,24 +34,21 @@ export const Search: FC<SearchProps> = props => {
 	}, [searchValue]);
 
 	return (
-		<Fragment>
-			<div className="DefaultSearchSpace">
-				<FontAwesomeIcon icon={faMagnifyingGlass} className="DefaultIconSearch"></FontAwesomeIcon>
+		<div className={classNames('ms-search-space', className !== undefined && className)}>
+			<div className="ms-search-space__parent">
+				<FontAwesomeIcon icon={faMagnifyingGlass} className="search-space__icon-search"></FontAwesomeIcon>
 				<input
-					className="DefaultEditor"
+					className="ms-search-space__editor"
 					onChange={handleChangedText}
 					value={searchValue}
 					placeholder={placeholder}
 				/>
 				<FontAwesomeIcon
 					icon={faX}
-					className={classNames('DefaultIconX', { hidden: isHiddenXIcon })}
+					className={classNames('ms-search-space__icon-x', { hidden: isHiddenXIcon })}
 					onClick={handleClearText}
 				></FontAwesomeIcon>
 			</div>
-			<div>
-				
-			</div>
-		</Fragment>
+		</div>
 	);
 };

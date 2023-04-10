@@ -7,11 +7,9 @@ import './index.scss';
 import { isLogging } from '../../app/reducers/authSlice';
 
 const onFinish = (values: any) => {
-	console.log('Success:', values);
 };
 
 const onFinishFailed = (errorInfo: any) => {
-	console.log('Failed:', errorInfo);
 };
 
 const Login: React.FC = () => {

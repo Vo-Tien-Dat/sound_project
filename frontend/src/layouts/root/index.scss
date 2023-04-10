@@ -1,24 +1,120 @@
-.RootLayoutOverride {
-	height: 100vh !important;
+@import '../../variables';
+@import '../../colors';
 
-	.HeaderAndContentLayoutOverride {
-		display: block;
-		overflow-y: auto;
-		position: relative;
-		.HeaderLayoutOverride {
-
-			display: flex;
-			position: fixed;
-			flex-direction: row;
-			align-items: center;
-			width: 100%;
-			z-index: 100;
-			padding: 0px!important;
-		}
-
-		.ContentLayoutOverride {
-			padding: 16px 0px;
-			margin-top: 0px;
-		}
+@media screen and (max-width: 576px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-2;
 	}
+
+	
+}
+
+@media screen and (min-width: 576px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-3;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-4;
+	}
+
+	
+}
+
+@media screen and (min-width: 992px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-5;
+	}
+
+	.root-layout__sider {
+		grid-column: $col-span-1 !important;
+	}
+
+	.root-layout__header-and-content {
+		grid-column: $col-span-4 !important;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-6 !important;
+	}
+
+	.root-layout__sider {
+		grid-column: $col-span-1 !important;
+	}
+
+	.root-layout__header-and-content {
+		grid-column: $col-span-5 !important;
+	}
+
+	.root-layout__header {
+	}
+
+	.root-layout__content {
+	}
+
+	.root-layout__footer {
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.root-layout {
+		grid-template-columns: $grid-cols-6;
+	}
+}
+
+.root-layout {
+	height: 100vh !important;
+	display: $grid;
+}
+
+.root-layout__sider {
+	background-color: #959595;
+}
+
+.root-layout__header-and-content {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.root-layout__header {
+	flex-grow: 0;
+}
+
+.root-layout__content {
+	flex-grow: 1;
+	width: $w-100;
+	height: $h-100;
+	overflow: hidden;
+}
+
+.root-layout__footer {
+}
+
+.header-and-content-layout {
+	display: block;
+	overflow-y: auto;
+	position: relative;
+}
+
+.header-layout {
+	display: flex;
+	position: fixed;
+	flex-direction: row;
+	align-items: center;
+	z-index: 100;
+	padding: 16px;
+	width: 100%;
+	background-color: #959595;
+}
+
+.content-layout {
+	padding: 16px 0px;
+	margin-top: 42px;
 }

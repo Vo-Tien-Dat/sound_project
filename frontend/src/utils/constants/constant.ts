@@ -15,3 +15,9 @@ export const CARD_VIEW_NUMBER_XL: number = 5;
 
 // screen >= 1600px
 export const CARD_VIEW_NUMBER_XXL: number = 8;
+
+export const SONG_VIEW_FOR_USER: number = 4;
+
+export const ALBUMS_VIEW_FOR_USER: number = 5;
+
+export const PLAYLIST_VIEW_FOR_USER: number = 5;

@@ -1,5 +1,29 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+
+import { Typography, Grid } from 'antd';
+import './index.scss';
+import { Cards } from '../../components/Cards';
+import { Card } from '../../components/Card';
+
+const { useBreakpoint } = Grid;
 
 export const Library: FC = () => {
-	return <div></div>;
+	const screen = useBreakpoint();
+
+	useEffect(() => {}, [screen]);
+
+	return (
+		<div className="library-space">
+			<div className="library__label">Title</div>
+			<div className="library__content">
+				<div className="library__content--song"></div>
+				<Card cardTitle={'hello ksdfjdfld jdjdj'}></Card>
+				<Card cardTitle={'hello world'}></Card>
+				<Card cardTitle={'hello world'}></Card>
+				<Card cardTitle={'hello world'}></Card>
+				<Card cardTitle={'hello world'}></Card>
+				<Card cardTitle={'hello world'}></Card>
+			</div>
+		</div>
+	);
 };

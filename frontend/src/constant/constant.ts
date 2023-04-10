@@ -28,3 +28,7 @@ export const GET_URL_READ_SONG = 'http://localhost:4000/user/';
 // call api for playlist
 
 // call api for
+
+// call api for home
+
+export const GET_URL_PAGE_HOME = 'http://localhost:4000/home';

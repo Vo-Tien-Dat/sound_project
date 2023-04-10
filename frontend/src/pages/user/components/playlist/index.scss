@@ -1,0 +1,119 @@
+@import '../../../../variables';
+@import '../../../../colors';
+
+@media screen and (max-width: 576px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-2;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $col-span-2;
+	}
+}
+
+@media screen and (max-height: 577px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-3;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $col-span-3;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-4;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $col-span-2;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-5;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-5;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-6;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $grid-cols-2;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $grid-cols-4;
+	}
+}
+
+@media screen and (min-width: 1800px) {
+	.user-playlists-content {
+		grid-template-columns: $grid-cols-7;
+	}
+
+	.user-playlists-content__songs {
+		grid-column: $grid-cols-3;
+	}
+
+	.user-playlists-content__albums {
+		grid-column: $grid-cols-4;
+	}
+}
+
+.user-playlists-content {
+	width: $w-100;
+	display: $flex;
+	flex-direction: column;
+}
+
+.user-playlists-content__songs {
+	display: $grid;
+}
+
+.user-playlists-content__albums {
+	display: $grid;
+}
+
+.user-playlists__label {
+	font-size: 20px;
+	font-weight: 600;
+}

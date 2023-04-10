@@ -8,7 +8,6 @@ export const userSlice = createSlice({
 	initialState: initialUserState,
 	reducers: {
 		createUserPending: (state, action) => {
-			console.log(action);
 		},
 		createUserSuccess: (state, action) => {},
 		createUserError: (state, action) => {},

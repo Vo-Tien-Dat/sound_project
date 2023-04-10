@@ -14,19 +14,11 @@ function* workerAuthPending(action: PayloadAction<any>) {
 	try {
 		const res: Promise<void> = yield call(authApi, user);
 		const { data }: any = res;
-		const listedKey = Object.keys(data);
-		/* throw message while authenticaion is successful */
-		if ('data' in listedKey) {
-			console.log('oke');
-			const {
-				data: { responseSuccess }
-			} = data;
-			const { access_token } = responseSuccess;
-			localStorage.setItem('access_token', access_token);
-		}
+		const { access_token } = data;
+		window.localStorage.setItem('access_token', access_token);
 	} catch (error) {
-		/* throw message while server is error */
 		console.log(error);
+		/* throw message while server is error */
 	}
 }
 export default function* watcherAuthPending() {

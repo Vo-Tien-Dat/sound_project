@@ -1,17 +1,22 @@
-export const homeApi = async (searchValue: string) => {
-	return await new Promise(resolve => {
-		const timeOut: number = 5000;
+import axios from 'axios';
+import { time } from 'console';
+import { GET_URL_PAGE_HOME } from '../constant/constant';
+
+export const homeApi = async () => {
+	const res = new Promise(resolve => {
+		const timeOut: number = 1000;
 		setTimeout(() => {
 			resolve({
-				contents: [
-                    {
-                        name: 'recently player',
-                        albums: [
-                            
-                        ]
-                    }
-                ]
+				test: 'hello world'
 			});
 		}, timeOut);
 	});
+
+	const accessToken = window.localStorage.getItem('access_token');
+	const request = axios.get(GET_URL_PAGE_HOME, {
+		headers: {
+			access_token: accessToken
+		}
+	});
+	return await request;
 };

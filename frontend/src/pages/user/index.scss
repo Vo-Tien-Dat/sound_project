@@ -1,8 +1,36 @@
-.UserInformationSpace {
-	padding: 16px 32px;
-    width: 100%;
+@import '../../variables';
+@import '../../colors';
 
-    .UserAvatarSpace{
-        margin: 16px; 
-    }
+.user-information-space {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 16px;
+	height: 100%;
+	overflow: auto;
+}
+
+.user-information-space__user-information {
+	display: block;
+	width: $w-100;
+}
+
+.user-information-space__user-content {
+}
+
+.user-content__parent {
+	display: block;
+}
+
+.user-information__user-avatar-space {
+	display: inline-block;
+}
+
+.user-information__user-name {
+	font-size: 24px;
+}
+
+.user-information__btn-followed {
+	display: inline-block;
+	font-size: $font-medium;
 }

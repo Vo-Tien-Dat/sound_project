@@ -25,7 +25,7 @@ export const Sider: FC<SiderProps> = props => {
 	};
 
 	const handleChangedUrl = (eventUrl: string) => {
-		const defaultKey = "hello world"; 
+		const defaultKey = 'hello world';
 		items !== undefined &&
 			items.map((currentValue: MenuItemProps, index: number) => {
 				const { key, url } = currentValue;
@@ -46,7 +46,7 @@ export const Sider: FC<SiderProps> = props => {
 	}, [history]);
 
 	return (
-		<Space className="SiderSpace" direction="vertical">
+		<Space className="sider-space" direction="vertical">
 			{items !== undefined &&
 				items.map((currentItemValue: MenuItemProps, index: number) => {
 					const { icon, label, key, url } = currentItemValue;

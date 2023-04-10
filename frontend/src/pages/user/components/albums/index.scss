@@ -1,0 +1,119 @@
+@import '../../../../variables';
+@import '../../../../colors';
+
+@media screen and (max-width: 576px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-2;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $col-span-2;
+	}
+}
+
+@media screen and (max-height: 577px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-3;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $col-span-3;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-4;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $col-span-2;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-5;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-5;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $col-span-2;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $col-span-3;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-6;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $grid-cols-2;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $grid-cols-4;
+	}
+}
+
+@media screen and (min-width: 1800px) {
+	.user-albums-content {
+		grid-template-columns: $grid-cols-7;
+	}
+
+	.user-albums-content__songs {
+		grid-column: $grid-cols-3;
+	}
+
+	.user-albums-content__albums {
+		grid-column: $grid-cols-4;
+	}
+}
+
+.user-albums-content {
+	width: $w-100;
+	display: $flex;
+	flex-direction: column;
+}
+
+.user-albums-content__songs {
+	display: $grid;
+}
+
+.user-albums-content__albums {
+	display: $grid;
+}
+
+.user-albums__label {
+	font-size: 20px;
+	font-weight: 600;
+}

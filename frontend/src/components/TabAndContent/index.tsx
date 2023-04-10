@@ -3,8 +3,8 @@ import { Space } from 'antd';
 import classNames from 'classnames';
 import './index.scss';
 import { TabProps } from './TabProps';
-export const TabAndContent: FC<Required<TabProps>> = props => {
-	const { tabPosition, tabItems, children } = props;
+export const TabAndContent: FC<TabProps> = props => {
+	const { className, style, tabPosition, tabItems, children, space } = props;
 
 	const [tabItemPostion, setTabItemPosition] = useState(tabPosition);
 
@@ -13,16 +13,17 @@ export const TabAndContent: FC<Required<TabProps>> = props => {
 	};
 
 	return (
-		<Space direction="vertical" style = {{
-			width: '100%',
-		}}>
-			<Space direction="horizontal" className="ControlSpace">
+		<div
+			className={classNames('tab-and-content-space', className !== undefined && className)}
+			style={{ ...style, gap: `${8}px` }}
+		>
+			<div className="tab-control-space">
 				{tabItems.map((value: string, index: number) => {
 					return (
 						<div
 							key={index}
 							onClick={() => handleTabItem(index)}
-							className={classNames('ControlItemSpace', {
+							className={classNames('tab-control-space__item', {
 								ActiveControlItemSpace: index === tabItemPostion
 							})}
 						>
@@ -30,14 +31,16 @@ export const TabAndContent: FC<Required<TabProps>> = props => {
 						</div>
 					);
 				})}
-			</Space>
-			<Space>
+			</div>
+			<div className="content-space">
 				{props.children.map((value: any, index: number) => {
 					return (
 						<div
 							className={classNames(
-								'ContentSpace',
-								index === tabItemPostion ? 'ActiveContentSpace' : 'InActiveContentSpace'
+								'content-space__item',
+								index === tabItemPostion
+									? 'content-space__item--active'
+									: 'content-space__item--inactive'
 							)}
 							key={index}
 						>
@@ -45,7 +48,7 @@ export const TabAndContent: FC<Required<TabProps>> = props => {
 						</div>
 					);
 				})}
-			</Space>
-		</Space>
+			</div>
+		</div>
 	);
 };

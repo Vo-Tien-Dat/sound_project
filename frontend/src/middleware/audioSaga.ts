@@ -7,7 +7,6 @@ function* updateAudioFavorite(action: PayloadAction<any>) {
 	try {
 		
 	} catch (error) {
-		console.log(error);
 	}
 }
 

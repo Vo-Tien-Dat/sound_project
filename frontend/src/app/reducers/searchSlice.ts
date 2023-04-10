@@ -3,7 +3,7 @@ import { Album } from '../../models/album';
 import { playlist } from '../../models/playlist';
 import { Song } from '../../models/song';
 import { User } from '../../models/user';
-import { CardsProps } from '../../components/Cards/CardsProps';
+
 export type Card = Album | User;
 
 export interface Content {
@@ -66,12 +66,65 @@ const initialState: SearchState = {
 					isLiked: true
 				},
 				{
-					userId: '1',
-					userName: 'vo tien dat',
-					password: 'hello',
-					name: 'test',
-					email: 'votiendat',
-					birthday: 'test'
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				},
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				},
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				},
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				},
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				}
+			]
+		},
+		{
+			label: 'Album',
+			cards: [
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
+				},
+				{
+					albumId: '1',
+					albumAuthor: '2',
+					albumSrcImage: '1',
+					albumName: 'vo tien dat',
+					albumNumberSong: 10,
+					isLiked: true
 				}
 			]
 		}

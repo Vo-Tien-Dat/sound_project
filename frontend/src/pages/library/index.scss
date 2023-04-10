@@ -1,0 +1,74 @@
+@import '../../variables';
+@import '../../colors';
+
+@media screen and (max-width: 576px) {
+	.library-space {
+		grid-template-columns: $grid-cols-2;
+	}
+}
+
+@media screen and (min-width: 577px) {
+	.library-space {
+		grid-template-columns: $grid-cols-3;
+	}
+	.library__content {
+		grid-template-columns: $grid-cols-3;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.library__content {
+		grid-template-columns: $grid-cols-4;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.library__content {
+		grid-template-columns: $grid-cols-5;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.library__content {
+		grid-template-columns: $grid-cols-6;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.library__content {
+		grid-template-columns: $grid-cols-6;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.library__content {
+		grid-template-columns: $grid-cols-7;
+	}
+}
+
+.library-space {
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	gap: 8px;
+}
+
+.library__label {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.library__content {
+	width: 100%;
+	display: grid;
+	gap: 8px;
+}
+
+.library__content--song {
+	border: 1px solid #959595;
+	border-radius: 8px;
+	overflow: hidden;
+	grid-column: $col-span-2;
+	flex-grow: 1;
+}

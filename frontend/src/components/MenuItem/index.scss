@@ -1,7 +1,6 @@
-.MenuItemSpace {
+.menu-item-space {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
 	padding: 8px 16px;
 	margin-bottom: 8px;
 	border: 1px solidr red;
@@ -9,15 +8,19 @@
 	cursor: pointer;
 }
 
-.MenuItemActive {
+.menu-item-space:hover {
+	background-color: #c6c6c6;
+}
+
+.menu-item-active {
 	background-color: white;
 }
 
-.MenuItemIcon {
+.menu-item-icon {
 	display: inline;
 	margin-right: 8px;
 }
 
-.MenuItemLabel {
+.menu-item-label {
 	display: inline;
 }

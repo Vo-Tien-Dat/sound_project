@@ -1,6 +1,100 @@
-.CardsSpace {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
+.ms-space-cards {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.ms-space-card {
+	display: block;
+}
+
+.ms-grid-row-1 {
+	grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.ms-grid-row-2 {
+	grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.ms-grid-row-3 {
+	grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.ms-grid-row-4 {
+	grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.ms-grid-row-5 {
+	grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.ms-grid-row-6 {
+	grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.ms-grid-col-1 {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.ms-grid-col-2 {
+	grid-template-columns: repeat(2, minmax(0, 2fr));
+}
+
+.ms-grid-col-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ms-grid-col-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ms-grid-col-5 {
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ms-grid-col-6 {
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.ms-grid-col-7 {
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.ms-grid-col-8 {
+	grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.ms-gap-2 {
+	gap: 2px;
+}
+
+.ms-gap-4 {
+	gap: 4px;
+}
+
+.ms-gap-8 {
+	gap: 8px;
+}
+
+.ms-gap-col-2 {
+	column-gap: 2px;
+}
+
+.ms-gap-col-4 {
+	column-gap: 4px;
+}
+
+.ms-gap-col-8 {
+	column-gap: 8px;
+}
+
+.ms-gap-row-2 {
+	row-gap: 2px;
+}
+
+.ms-gap-row-4 {
+	row-gap: 4px;
+}
+
+.ms-gap-row-8 {
+	row-gap: 8px;
 }

@@ -2,7 +2,7 @@ import { Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('playlist')
 export class PlaylistController {
-    @Post()
+    @Post('create')
     createPlaylist(): string {
         return 'successful';
     }

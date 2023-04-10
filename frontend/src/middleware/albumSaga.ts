@@ -11,7 +11,6 @@ function* workerAddAudioFavoritePending(action: PayloadAction<Required<Pick<Albu
 		const {
 			payload: { albumId }
 		} = action;
-		console.log(albumId);
 	} catch (error) {}
 }
 
@@ -34,7 +33,6 @@ export function* workerReadAlbumPending(action: PayloadAction<Required<Pick<Albu
 			payload: response
 		});
 	} catch (error) {
-		console.log(error);
 	}
 }
 

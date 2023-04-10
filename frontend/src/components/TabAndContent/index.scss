@@ -1,15 +1,15 @@
-.ControlSpace {
+.tab-and-content-space {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.tab-control-space {
 	display: flex;
 	flex-direction: row;
 	overflow: auto;
-	.ControlItemSpace {
-		padding: 8px 16px;
-		border-radius: 8px;
-		border: 1px solid #959595;
-		&:hover {
-			background-color: #959595;
-		}
-	}
+	gap: 8px;
 
 	.InActiveControlItemSpace {
 		background-color: #ffffff;
@@ -20,15 +20,28 @@
 	}
 }
 
-.ContentSpace {
-	width: 100%;
-	min-width: 512px;
+.tab-control-space__item {
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: 1px solid #959595;
+	&:hover {
+		background-color: #c6c6c6;
+	}
 }
 
-.ActiveContentSpace {
+.content-space {
+	display: block;
+	width: 100%;
+}
+
+.content-space__item {
+	width: 100%;
+}
+
+.content-space__item--active {
 	display: block;
 }
 
-.InActiveContentSpace {
+.content-space__item--inactive {
 	display: none;
 }

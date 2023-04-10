@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 
 export interface CardProps {
+	skeleton?: boolean;
+	skeletonActive?: boolean;
 	srcImage?: string;
 	cardTitle?: string;
 	cardDetails?: string;

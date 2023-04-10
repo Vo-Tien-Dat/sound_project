@@ -4,18 +4,26 @@ import { UserOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Space, Grid, Typography } from 'antd';
 import { AvatarAndMenu } from '../../components/AvatarAndMenu';
 import { Search } from '../../components/Search';
+import { Avatar } from '../../components/Avatar';
 const { useBreakpoint } = Grid;
+
+const menuItem: string[] = ['hello world', 'test ', 'hello world', 'test', 'test', 'test'];
 
 const Header: React.FC = () => {
 	const screens = useBreakpoint();
 	const laptopScreen = screens['lg'] || screens['xl'] || screens['xxl'];
-
+	1;
 	return (
 		<>
 			{laptopScreen ? (
-				<Space direction="horizontal" align="center" className="HeaderSpace">
-					<Search />
-				</Space>
+				<div className="header-space">
+					<div className="header-space__search">
+						<Search />
+					</div>
+					<div className="header-space__avatar">
+						<Avatar menuItem={menuItem} />
+					</div>
+				</div>
 			) : (
 				<Space></Space>
 			)}

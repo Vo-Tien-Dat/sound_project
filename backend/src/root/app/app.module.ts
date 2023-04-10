@@ -6,9 +6,9 @@ import { AuthModule } from 'src/apis/authentication/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PlaylistModule } from 'src/apis/playlist/playlist.module';
 import { UserModule } from 'src/apis/user/user.module';
-import { SongModule } from 'src/apis/song/song.module';
 import { SearchModule } from 'src/apis/search/search.module';
 import { HomeModule } from 'src/apis/home/home.module';
+import { LibraryModule } from 'src/apis/library/library.module';
 
 @Module({
     imports: [
@@ -25,8 +25,8 @@ import { HomeModule } from 'src/apis/home/home.module';
         AuthModule,
         PlaylistModule,
         UserModule,
-        SongModule,
         SearchModule,
+        LibraryModule,
         HomeModule,
     ],
     providers: [AppService],

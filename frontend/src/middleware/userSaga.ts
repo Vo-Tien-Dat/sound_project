@@ -26,7 +26,6 @@ function* workerCreateUserPending(action: PayloadAction<UserUsedSignUp>) {
 }
 
 export default function* watcherAuthUserPending() {
-	console.log('oke');
 	yield takeEvery(authUserPending.type, workerCreateUserPending);
 }
 

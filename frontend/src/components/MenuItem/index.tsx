@@ -14,16 +14,16 @@ const DefaultMenuItemProps: MenuItemProps = {
 export const MenuItem: FC<MenuItemProps> = props => {
 	const { icon, label, isSelected, url } = { ...DefaultMenuItemProps, ...props };
 	return (
-		<div className={classNames('MenuItemSpace', { MenuItemActive: isSelected })}>
+		<div className={classNames('menu-item-space', { 'menu-item-active': isSelected })}>
 			{url !== undefined ? (
 				<Link to={url}>
-					<div className="MenuItemIcon">{icon}</div>
-					<div className="MenuItemLabel">{label}</div>
+					<div className="menu-item-icon">{icon}</div>
+					<div className="menu-item-label">{label}</div>
 				</Link>
 			) : (
 				<>
-					<div className="MenuItemIcon">{icon}</div>
-					<div className="MenuItemLabel">{label}</div>
+					<div className="menu-item-icon">{icon}</div>
+					<div className="menu-item-label">{label}</div>
 				</>
 			)}
 		</div>

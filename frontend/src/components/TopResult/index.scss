@@ -1,13 +1,13 @@
 .top-result-space {
 	display: flex;
-	flex-grow: 1;
-	width: 100%;
 	border: 1px solid #959595;
 	border-radius: 8px;
 	overflow: hidden;
-	padding: 8px;
 	display: flex;
+	padding: 8px;
+	overflow: hidden;
 	flex-direction: column;
+	height: 100%;
 
 	&:hover {
 		background-color: #c6c6c6;
@@ -17,7 +17,7 @@
 		background-color: #c6c6c6;
 		top: 0%;
 		left: 0%;
-		right: 0%; 
+		right: 0%;
 		bottom: 0%;
 		background-color: yellow;
 	}

@@ -5,12 +5,8 @@ import { loadingData, toAddAlbum, toAddListSong } from '../app/reducers/searchSl
 import { Song } from '../models/song';
 
 export function* workerLoadingData(action: PayloadAction<string>) {
-	console.log(action); 
-	console.log('oke');
 	try {
-		console.log('run worker loading data');
 	} catch (error) {
-		console.log(error);
 	}
 }
 

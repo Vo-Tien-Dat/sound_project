@@ -1,5 +1,15 @@
-.HeaderSpace {
+@import '../../variables';
+@import '../../colors';
+.header-space {
 	display: flex;
-	align-items: center;
-	width: 100%;
+	padding: 16px;
+	background-color: aqua;
+}
+
+.header-space__search {
+	flex-grow: 1;
+}
+
+.header-space__avatar {
+	flex-grow: 0;
 }

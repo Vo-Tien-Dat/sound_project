@@ -1,7 +1,12 @@
-import { CardProps } from '../Card/CardProps';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react';
 
-export interface CardsProps extends CardProps {
-	cardNumber: number;
-	items: CardProps[] | any;
-	space: number;
+export interface CardsProps {
+	className?: string;
+	children?: ReactNode[] | ReactElement[];
+	style?: CSSProperties;
+	gapCol?: number | string;
+	gapRow?: number | string;
+	col?: number | string;
+	row?: number | string;
+	card?: number | string;
 }
