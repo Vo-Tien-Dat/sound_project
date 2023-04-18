@@ -2,8 +2,7 @@ import React, { FC, useEffect } from 'react';
 
 import { Typography, Grid } from 'antd';
 import './index.scss';
-import { Cards } from '../../components/Cards';
-import { Card } from '../../components/Card';
+import Card from '../../components/Card';
 
 const { useBreakpoint } = Grid;
 

@@ -21,5 +21,5 @@ export interface SongProps {
 
 	skeletonActive?: boolean;
 
-	getHeartStatus?: () => any;
+	onClickHeart?: (songId: string, isHeart: boolean) => boolean;
 }

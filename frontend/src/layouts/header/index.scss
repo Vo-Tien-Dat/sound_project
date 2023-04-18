@@ -1,15 +1,15 @@
 @import '../../variables';
 @import '../../colors';
-.header-space {
+.ms-header-space {
 	display: flex;
 	padding: 16px;
-	background-color: aqua;
+	background-color: #959595;
 }
 
-.header-space__search {
+.ms-header-space__search {
 	flex-grow: 1;
 }
 
-.header-space__avatar {
+.ms-header-space__avatar {
 	flex-grow: 0;
 }

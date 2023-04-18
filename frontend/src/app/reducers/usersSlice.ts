@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { DEFAULT_DATA_TYPE_STRING_EMPTY } from '../../constant/constant';
 const initialState: any = {
-	srcImage: '',
-	name: 'Adele',
-	isFollowed: true,
+	srcImage: DEFAULT_DATA_TYPE_STRING_EMPTY,
+	name: DEFAULT_DATA_TYPE_STRING_EMPTY,
+	isFollowed: false,
 	songs: [],
 	albums: [],
 	playlists: []

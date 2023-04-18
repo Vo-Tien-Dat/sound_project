@@ -1,15 +1,16 @@
-import React, { FC, useState, useEffect, Fragment } from 'react';
+import React, { FC, useState, useEffect, Fragment, useMemo } from 'react';
 import { faMagnifyingGlass, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import './index.scss';
 import { is } from 'immer/dist/internal';
 import { SearchProps } from './SearchProps';
+import { Typography } from 'antd';
+
 export const Search: FC<SearchProps> = props => {
 	const [isHiddenXIcon, setHiddenXIcon] = useState(true);
 	const [searchValue, setSeachValue] = useState('');
 	const { className, style, placeholder, getData } = props;
-
 	const handleGetData = () => {
 		if (getData !== undefined) {
 			getData(searchValue);
@@ -18,20 +19,14 @@ export const Search: FC<SearchProps> = props => {
 
 	const handleClearText = () => {
 		setSeachValue('');
+		setHiddenXIcon(true);
 	};
 
 	const handleChangedText = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
 		setSeachValue(value);
+		setHiddenXIcon(value.length > 0 && false);
 	};
-
-	useEffect(() => {
-		if (searchValue.length === 0) {
-			setHiddenXIcon(true);
-		} else {
-			setHiddenXIcon(false);
-		}
-	}, [searchValue]);
 
 	return (
 		<div className={classNames('ms-search-space', className !== undefined && className)}>

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, memo } from 'react';
 
 import { Typography, Skeleton } from 'antd';
 import './index.scss';
@@ -7,7 +7,7 @@ import { CardPropsPreview, CardRequiredProps } from './CardRequiredProps';
 
 const square: string[] = ['square', 'undefined'];
 
-export const Card: FC<CardPropsPreview> = props => {
+const Card: FC<CardPropsPreview> = props => {
 	const { skeleton, skeletonActive, cardTitle, shape, srcImage, cardDetails } = { ...CardRequiredProps, ...props };
 	return (
 		<div className="card">
@@ -61,3 +61,5 @@ export const Card: FC<CardPropsPreview> = props => {
 		</div>
 	);
 };
+
+export default Card;

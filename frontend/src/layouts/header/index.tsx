@@ -16,13 +16,11 @@ const Header: React.FC = () => {
 	return (
 		<>
 			{laptopScreen ? (
-				<div className="header-space">
-					<div className="header-space__search">
+				<div className="ms-header-space">
+					<div className="ms-header-space__search">
 						<Search />
 					</div>
-					<div className="header-space__avatar">
-						<Avatar menuItem={menuItem} />
-					</div>
+					<div className="ms-header-space__avatar">{/* <Avatar menuItem={menuItem} /> */}</div>
 				</div>
 			) : (
 				<Space></Space>

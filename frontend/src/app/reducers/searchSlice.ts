@@ -29,28 +29,32 @@ const initialState: SearchState = {
 			songSrcImage: '',
 			songName: 'Light Switch',
 			songAuthor: 'Charlie Puth',
-			songTime: '10:01'
-		},
-		{
-			songId: '1',
-			songSrcImage: '',
-			songName: 'Light Switch',
-			songAuthor: 'Charlie Puth',
-			songTime: '10:01'
+			songTime: '10:01',
+			isHeart: false
 		},
 		{
 			songId: '2',
 			songSrcImage: '',
-			songName: 'Set time out',
-			songAuthor: 'Adele',
-			songTime: '10:01'
+			songName: 'Light Switch',
+			songAuthor: 'Charlie Puth',
+			songTime: '10:01',
+			isHeart: true
 		},
 		{
 			songId: '3',
 			songSrcImage: '',
 			songName: 'Set time out',
+			songAuthor: 'Adele',
+			songTime: '10:01',
+			isHeart: false
+		},
+		{
+			songId: '4',
+			songSrcImage: '',
+			songName: 'Set time out',
 			songAuthor: 'Vo Tien Dat',
-			songTime: '10:01'
+			songTime: '10:01',
+			isHeart: false
 		}
 	],
 	contents: [
@@ -135,38 +139,23 @@ const searchSlice = createSlice({
 	name: 'search',
 	initialState,
 	reducers: {
-		loadingData(state, action: PayloadAction<string>) {
-			const songs = [
-				{
-					songId: '1',
-					songSrcImage: '',
-					songName: 'Light Switch',
-					songAuthor: 'Charlie Puth',
-					songTime: '10:01'
-				},
-				{
-					songId: '1',
-					songSrcImage: '',
-					songName: 'Light Switch',
-					songAuthor: 'Charlie Puth',
-					songTime: '10:01'
-				},
-				{
-					songId: '2',
-					songSrcImage: '',
-					songName: 'Set time out',
-					songAuthor: 'Adele',
-					songTime: '10:01'
-				}
-			];
-		},
+		loadingData(state, action: PayloadAction<string>) {},
 		toAddListSong(state, action: PayloadAction<any>) {},
-		toAddAlbum(state, action: PayloadAction<any>) {}
+		toAddAlbum(state, action: PayloadAction<string>) {},
+		toAddFavoriteSong(state, action: PayloadAction<any>) {},
+		toUpdateFavoriteSong(state, action: PayloadAction<any>) {
+			const { payload } = action;
+			const { song_id, heart_status } = payload;
+			const songIndex = state.songs?.findIndex((value: any) => value.songId === song_id);
+			if (state.songs !== undefined && songIndex !== undefined && songIndex !== -1) {
+				state.songs[songIndex].isHeart = heart_status;
+			}
+		}
 	}
 });
 
 const { reducer, actions } = searchSlice;
 
-export const { loadingData, toAddListSong, toAddAlbum } = actions;
+export const { loadingData, toAddListSong, toAddAlbum, toAddFavoriteSong, toUpdateFavoriteSong } = actions;
 
 export default reducer;

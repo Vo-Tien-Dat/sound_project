@@ -4,15 +4,10 @@ import { readSong } from '../app/reducers/songSlice';
 
 export function* workerReadSongForUser() {
 	try {
-		
-	} catch (error) {
-	}
+	} catch (error) {}
 }
 
-export function* watcherReadSongForUser() {
+export default function* watcherReadSongForUser() {
+	console.log('run song saga');
 	yield takeEvery(readSong.type, workerReadSongForUser);
-}
-
-export function* watcherAllEventSong() {
-	yield all([watcherReadSongForUser()]);
 }

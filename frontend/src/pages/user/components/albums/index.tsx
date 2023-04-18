@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import './index.scss';
 import { Space } from 'antd';
-import { Card } from '../../../../components/Card';
 import { Cards } from '../../../../components/Cards';
+import Card from '../../../../components/Card';
 import Typography from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../app/store';

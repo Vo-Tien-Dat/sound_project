@@ -11,17 +11,18 @@ import SkeletonAvatar from 'antd/es/skeleton/Avatar';
 import SkeletonInput from 'antd/es/skeleton/Input';
 export const Song: FC<SongProps> = props => {
 	const {
+		songId,
 		songName,
 		songSrcImage,
 		listener,
 		isHeart,
 		songTime,
 		songPosition,
-		getHeartStatus,
 		songAuthor,
 		songAlbum,
 		skeleton,
-		skeletonActive
+		skeletonActive,
+		onClickHeart
 	} = props;
 
 	const refIconHeart = useRef<any>(null);
@@ -36,6 +37,7 @@ export const Song: FC<SongProps> = props => {
 	const handleClickManagement = (event: React.MouseEvent<HTMLElement>) => {
 		const { target } = event;
 		if (refIconHeart.current.contains(target)) {
+			onClickHeart !== undefined && onClickHeart(songId || '1', isFavorite);
 			return handleFavorite();
 		}
 		return handleClickSong();

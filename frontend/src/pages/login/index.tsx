@@ -1,20 +1,44 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import { Space, Row, Col, Divider } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './index.scss';
 import { isLogging } from '../../app/reducers/authSlice';
+import { RootState } from '../../app/store';
+import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+const onFinish = (values: any) => {};
 
-const onFinish = (values: any) => {
-};
+const onFinishFailed = (errorInfo: any) => {};
 
-const onFinishFailed = (errorInfo: any) => {
-};
+const VALIDATE_PASSWORD_FAILED = 'password is empty';
 
+const VALIDATE_EMAIL_FALIED = 'email is empty';
+
+const VALIDATE_EMAIL_SUCCESS = '';
+
+const VALIDATE_PASSWORD_SUCCESS = '';
+
+type validating = '' | 'success' | 'warning' | 'error' | 'validating';
+
+type helpUserName = '' | 'Không đúng form của email' | 'email bị trống';
+
+type helpPassword = '' | 'Không đúng form của password' | 'Mật khẩu bị trống';
 const Login: React.FC = () => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const loggingSuccessStatus = useSelector<RootState, boolean>(state => state.auth.logging_success_status);
 	const [userName, setUserName] = useState('');
 	const [password, setPassword] = useState('');
+	const [userNameValidateStatus, setUserNameValidateStatus] = useState<validating>('');
+	const [passwordValidateStatus, setPasswordValidateStatus] = useState<validating>('');
+	const [helpUserName, setHelpUserName] = useState<string>(VALIDATE_EMAIL_SUCCESS);
+	const [helpPassword, setHelpPassword] = useState<string>(VALIDATE_PASSWORD_SUCCESS);
+	const [formLogin] = Form.useForm();
+
+	const handleRedirect = () => {};
 
 	const handleUserName = (event: ChangeEvent<HTMLInputElement>) => {
 		setUserName(event.currentTarget.value);
@@ -24,17 +48,25 @@ const Login: React.FC = () => {
 		setPassword(event.currentTarget.value);
 	};
 
-	const dispatch = useDispatch();
+	const validateUserNameAndPassword = () => {};
 
 	const handleSignIn = () => {
 		dispatch(isLogging({ userName, password }));
 	};
 
+	useEffect(() => {
+		if (userName === '') {
+			setUserNameValidateStatus('error');
+			setHelpUserName(VALIDATE_EMAIL_FALIED);
+		}
+	}, [userName, password]);
+
 	return (
-		<Space className="LoginSpace">
+		<Space className="login-space">
 			<Space>
 				<Form
-					className="LoginFormOverride"
+					form={formLogin}
+					className="login-form"
 					name="basic"
 					style={{ width: '360px', minWidth: '240px' }}
 					initialValues={{ remember: true }}
@@ -43,7 +75,9 @@ const Login: React.FC = () => {
 					autoComplete="off"
 				>
 					<Form.Item
-						className="LoginFormItemOverride"
+						validateStatus={userNameValidateStatus}
+						help={helpUserName}
+						className="login-form-item"
 						wrapperCol={{ span: 24 }}
 						name="username"
 						rules={[{ required: true, message: 'Please input your username' }]}
@@ -57,10 +91,11 @@ const Login: React.FC = () => {
 					</Form.Item>
 
 					<Form.Item
-						className="LoginFormItemOverride"
+						className="login-form-item"
+						validateStatus={passwordValidateStatus}
+						help={helpPassword}
 						wrapperCol={{ span: 24 }}
 						name="password"
-						rules={[{ required: true, message: 'Please input your password' }]}
 					>
 						<Input.Password
 							className="InputOverride"
@@ -71,7 +106,7 @@ const Login: React.FC = () => {
 						/>
 					</Form.Item>
 
-					<Form.Item className="LoginFormItemOverride" wrapperCol={{ span: 24 }} name="password">
+					<Form.Item className="login-form-item" wrapperCol={{ span: 24 }} name="password">
 						<Row justify="space-between">
 							<Col>
 								<a href="#">
@@ -86,7 +121,7 @@ const Login: React.FC = () => {
 						</Row>
 					</Form.Item>
 
-					<Form.Item className="LoginFormItemOverride" wrapperCol={{ span: 24 }}>
+					<Form.Item className="login-form-item" wrapperCol={{ span: 24 }}>
 						<Button
 							size={'large'}
 							type="primary"
@@ -100,12 +135,12 @@ const Login: React.FC = () => {
 
 					<Divider>or</Divider>
 
-					<Form.Item className="LoginFormItemOverride" wrapperCol={{ span: 24 }}>
+					<Form.Item className="login-form-item" wrapperCol={{ span: 24 }}>
 						<Button type="primary" size={'large'} style={{ width: '100%' }}>
 							Connect with Facebook
 						</Button>
 					</Form.Item>
-					<Form.Item className="LoginFormItemOverride" wrapperCol={{ span: 24 }}>
+					<Form.Item className="login-form-item" wrapperCol={{ span: 24 }}>
 						<Button size={'large'} style={{ width: '100%' }}>
 							Connect with Google
 						</Button>

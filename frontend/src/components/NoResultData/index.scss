@@ -1,0 +1,14 @@
+@import '../../variables';
+@import '../../colors';
+
+.no-result-data-space {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.no-result-data__content {
+	display: inline-block;
+}

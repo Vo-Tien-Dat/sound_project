@@ -128,11 +128,11 @@
 }
 
 .search-space {
-	display: grid;
+	display: $grid;
 	height: 100%;
+	overflow-y: auto;
+	gap: 8px;
 	padding: 16px;
-	overflow-y: scroll;
-	gap: 16px;
 }
 
 .top-result__parent {

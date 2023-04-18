@@ -4,5 +4,6 @@ export interface Song {
 	songSrcImage?: string;
 	songTime?: string;
 	songAuthor?: string;
+	isHeart?: boolean;
 	listener?: number;
 }

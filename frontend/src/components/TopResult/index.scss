@@ -1,25 +1,17 @@
+@import '../../variables';
+@import '../../colors';
+
 .top-result-space {
 	display: flex;
 	border: 1px solid #959595;
 	border-radius: 8px;
-	overflow: hidden;
-	display: flex;
+	overflow: overflow-hidden;
 	padding: 8px;
-	overflow: hidden;
 	flex-direction: column;
 	height: 100%;
 
 	&:hover {
 		background-color: #c6c6c6;
-	}
-	&::before {
-		content: '';
-		background-color: #c6c6c6;
-		top: 0%;
-		left: 0%;
-		right: 0%;
-		bottom: 0%;
-		background-color: yellow;
 	}
 }
 

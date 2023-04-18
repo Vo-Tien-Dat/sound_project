@@ -13,4 +13,41 @@ export class AlbumService {
     async readMultipleSongByAlbumId(albumId: string): Promise<Song[]> {
         return;
     }
+
+    async readAllAlbumByIdUser(idUser: string): Promise<Album[]> {
+        const fakeApi: Album[] = [
+            {
+                albumId: '1',
+                albumName: 'adele',
+                albumAuthor: 'adele',
+                albumDescription: 'test',
+                albumSoundNumber: 1000,
+                albumSrcImage: '',
+            },
+            {
+                albumId: '1',
+                albumName: 'adele',
+                albumAuthor: 'adele',
+                albumDescription: 'test',
+                albumSoundNumber: 1000,
+                albumSrcImage: '',
+            },
+            {
+                albumId: '1',
+                albumName: 'adele',
+                albumAuthor: 'adele',
+                albumDescription: 'test',
+                albumSoundNumber: 1000,
+                albumSrcImage: '',
+            },
+        ];
+
+        const res = new Promise<Album[]>((resolve) => {
+            const timeOut: number = 1000;
+            setTimeout(() => {
+                resolve(fakeApi);
+            }, timeOut);
+        });
+        return res;
+    }
 }

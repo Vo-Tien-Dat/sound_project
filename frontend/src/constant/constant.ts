@@ -32,3 +32,5 @@ export const GET_URL_READ_SONG = 'http://localhost:4000/user/';
 // call api for home
 
 export const GET_URL_PAGE_HOME = 'http://localhost:4000/home';
+
+export const DEFAULT_DATA_TYPE_STRING_EMPTY: string = '';

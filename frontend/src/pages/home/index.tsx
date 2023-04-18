@@ -5,7 +5,7 @@ import './index.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../app/store';
 import { ContentState } from '../../app/reducers/homeSlice';
-import { Card } from '../../components/Card';
+import Card from '../../components/Card';
 import { Album } from '../../models/album';
 import Math from '../../utils/constants/math';
 import { loadingDataPending } from '../../app/reducers/homeSlice';

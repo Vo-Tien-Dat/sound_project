@@ -15,7 +15,7 @@
 	}
 }
 
-@media screen and (max-height: 577px) {
+@media screen and (min-height: 577px) {
 	.user-playlists-content {
 		grid-template-columns: $grid-cols-3;
 	}
@@ -103,6 +103,8 @@
 	width: $w-100;
 	display: $flex;
 	flex-direction: column;
+	padding-top: 32px;
+	padding-bottom: 32px;
 }
 
 .user-playlists-content__songs {

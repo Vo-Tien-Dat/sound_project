@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Space } from 'antd';
 import { Cards } from '../../../../components/Cards';
-import { Card } from '../../../../components/Card';
+import Card from '../../../../components/Card';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../app/store';
 import './index.scss';
