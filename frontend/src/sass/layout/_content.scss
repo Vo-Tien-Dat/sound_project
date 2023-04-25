@@ -1,0 +1,14 @@
+@import '../abstracts/colors';
+@import '../abstracts/variables';
+#content {
+	background-color: $black-200;
+}
+
+.content__title {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.content__title--primary {
+	color: $white;
+}

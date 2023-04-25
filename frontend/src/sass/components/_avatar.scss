@@ -1,0 +1,39 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+.avatar-space {
+	position: relative;
+	width: auto;
+
+	&-control {
+		background-color: $white;
+		border-radius: 18px;
+		padding-right: 8px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 4px;
+	}
+
+	&__image {
+		height: 36px;
+		width: 36px;
+	}
+
+	&__name {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	&__menu {
+		position: absolute;
+		margin: 4px;
+		top: 100%;
+		right: 0%;
+		width: 256px;
+
+		&--inactive {
+			display: none;
+		}
+	}
+}

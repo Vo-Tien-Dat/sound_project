@@ -9,23 +9,23 @@ import { Typography } from 'antd';
 
 export const Search: FC<SearchProps> = props => {
 	const [isHiddenXIcon, setHiddenXIcon] = useState(true);
-	const [searchValue, setSeachValue] = useState('');
+	const [value, setValue] = useState<string>('');
 	const { className, style, placeholder, getData } = props;
-	const handleGetData = () => {
-		if (getData !== undefined) {
-			getData(searchValue);
-		}
-	};
 
-	const handleClearText = () => {
-		setSeachValue('');
+	const { onChange } = props;
+
+	const handleClearValue = () => {
+		setValue('');
 		setHiddenXIcon(true);
 	};
 
-	const handleChangedText = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const value = event.target.value;
-		setSeachValue(value);
-		setHiddenXIcon(value.length > 0 && false);
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const value: string = event.target.value;
+		if (onChange !== undefined) {
+			onChange(value);
+		}
+		setValue(value);
+		setHiddenXIcon(!(value.length > 0));
 	};
 
 	return (
@@ -34,14 +34,16 @@ export const Search: FC<SearchProps> = props => {
 				<FontAwesomeIcon icon={faMagnifyingGlass} className="search-space__icon-search"></FontAwesomeIcon>
 				<input
 					className="ms-search-space__editor"
-					onChange={handleChangedText}
-					value={searchValue}
+					onChange={handleChange}
+					value={value}
 					placeholder={placeholder}
 				/>
 				<FontAwesomeIcon
 					icon={faX}
-					className={classNames('ms-search-space__icon-x', { hidden: isHiddenXIcon })}
-					onClick={handleClearText}
+					className={classNames('ms-search-space__icon-x', {
+						'ms-search-space__icon-x--hidden': isHiddenXIcon
+					})}
+					onClick={handleClearValue}
 				></FontAwesomeIcon>
 			</div>
 		</div>

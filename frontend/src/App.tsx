@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import './sass/app.scss';
 import Root from './layouts/root';
 import Login from './pages/login';
 import { router } from './routes/routes';

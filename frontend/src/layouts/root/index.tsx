@@ -27,9 +27,9 @@ const Root: FC<RootProps> = props => {
 	const navigate = useNavigate();
 
 	const handleTokenChange = (event: StorageEvent) => {
-		if (event['key'] === 'access_token' && event['newValue'] === null) {
-			navigate('/login');
-		}
+		// if (event['key'] === 'access_token' && event['newValue'] === null) {
+		// 	navigate('/login');
+		// }
 	};
 
 	const handleTokenChecked = () => {
@@ -39,20 +39,24 @@ const Root: FC<RootProps> = props => {
 		}
 	};
 
-	addEventListener('storage', handleTokenChange);
+	// addEventListener('storage', handleTokenChange);
 
 	return (
 		<Fragment>
 			{laptopScreen ? (
 				<div className="root-layout">
-					<div className="root-layout__sider">{<SiderComp />}</div>
+					<div id="sidebar" className="root-layout__sider">
+						{<SiderComp />}
+					</div>
 
 					<div className="root-layout__header-and-content">
 						<div className="root-layout__header">
 							<HeaderComp />
 						</div>
 
-						<div className="root-layout__content">{connection ? <Outlet /> : <NoResultData />}</div>
+						<div id="content" className="root-layout__content">
+							{connection ? <Outlet /> : <NoResultData />}
+						</div>
 					</div>
 					{/* <SongDisplay></SongDisplay> */}
 				</div>

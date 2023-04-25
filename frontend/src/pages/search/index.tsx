@@ -6,23 +6,34 @@ import { loadingData } from '../../app/reducers/searchSlice';
 
 import Songs from './components/Songs';
 import Albums from './components/Albums';
+import useAuth from '../../hooks/useAuth';
+import { KEY_ACCESS_TOKEN } from '../../constant/constant';
 
 const { useBreakpoint } = Grid;
 export const Search: FC = () => {
 	const dispatch = useDispatch();
 
+	const handleStorageChange = (event: StorageEvent) => {
+		console.log(event['key']);
+		console.log('oke');
+		if (event['key'] === 'access_token') {
+			console.log(localStorage.getItem('access_token'));
+		}
+	};
+	addEventListener('storage', handleStorageChange);
+
 	return (
 		<div className="search-space">
 			<div className="search-space__top-result">
 				<div className="top-result__parent">
-					<div className="top-result__label search__label">Top result</div>
+					<div className="content__title content__title--primary">Top result</div>
 					<div className="top-result__content">{/* <TopResult /> */}</div>
 				</div>
 			</div>
 			<div className="search-space__song">
 				<div className="search-space__song-content">
 					<div className="song-content__parent">
-						<Typography className="song-content__label search__label">Song</Typography>
+						<Typography className="content__title content__title--primary">Song</Typography>
 						<div className="song-content__content">
 							<Songs />
 						</div>

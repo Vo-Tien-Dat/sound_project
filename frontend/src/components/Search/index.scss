@@ -2,7 +2,7 @@
 	display: inline-block;
 	background-color: white;
 	padding: 8px 16px;
-	border-radius: 16px;
+	border-radius: 32px;
 	border: 1px solid #959595;
 }
 
@@ -31,7 +31,8 @@
 .ms-search-space__icon-x {
 	flex-grow: 0;
 	margin-left: 4px;
+	font-size: 12px;
 }
-.hidden {
+.ms-search-space__icon-x--hidden {
 	visibility: hidden;
 }

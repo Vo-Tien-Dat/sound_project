@@ -52,7 +52,7 @@ const Albums: FC = () => {
 					const { label, cards } = contentValue;
 					return (
 						<div key={index} className="main-content__cards-item">
-							<div className="cards-item__label search__label">{label}</div>
+							<div className="content__title content__title--primary">{label}</div>
 							<div className="cards-item__content">
 								<Cards>
 									{cards

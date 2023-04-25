@@ -34,3 +34,7 @@ export const GET_URL_READ_SONG = 'http://localhost:4000/user/';
 export const GET_URL_PAGE_HOME = 'http://localhost:4000/home';
 
 export const DEFAULT_DATA_TYPE_STRING_EMPTY: string = '';
+
+export const KEY_ACCESS_TOKEN: string = 'access_token';
+
+export const KEY_REFRESH_ACCESS_TOKEN: string = 'refresh_token';

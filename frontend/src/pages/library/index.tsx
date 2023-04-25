@@ -13,7 +13,7 @@ export const Library: FC = () => {
 
 	return (
 		<div className="library-space">
-			<div className="library__label">Title</div>
+			<div className="content__title content__title--primary">Title</div>
 			<div className="library__content">
 				<div className="library__content--song"></div>
 				<Card cardTitle={'hello ksdfjdfld jdjdj'}></Card>

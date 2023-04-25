@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, memo } from 'react';
 
 import { Typography, Skeleton } from 'antd';
-import './index.scss';
 import { Image } from 'antd';
 import { CardPropsPreview, CardRequiredProps } from './CardRequiredProps';
 
@@ -22,7 +21,15 @@ const Card: FC<CardPropsPreview> = props => {
 					shape="square"
 				></Skeleton.Avatar>
 			)) ||
-				(srcImage !== undefined && <Image preview={false} className="card__image" src={srcImage} />) || (
+				(srcImage !== undefined && (
+					<img
+						style={{
+							zIndex: '0'
+						}}
+						className="card__image"
+						alt=""
+					/>
+				)) || (
 					<Skeleton.Avatar
 						active={skeletonActive}
 						style={{

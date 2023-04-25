@@ -4,9 +4,8 @@ import Avatar from 'antd/es/avatar/avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
-import { SongProps } from './SongsProps';
+import { SongProps } from './SongProps';
 import { UserOutlined } from '@ant-design/icons';
-import './index.scss';
 import SkeletonAvatar from 'antd/es/skeleton/Avatar';
 import SkeletonInput from 'antd/es/skeleton/Input';
 export const Song: FC<SongProps> = props => {
@@ -47,11 +46,12 @@ export const Song: FC<SongProps> = props => {
 		<div className="song-space" onClick={handleClickManagement}>
 			<Space className="song-space__main-song">
 				<div className="main-song__position">
-					{skeleton === true ? (
+					<Typography className="song__position song__position--primary">{songPosition}</Typography>
+					{/* {skeleton === true ? (
 						<Skeleton.Input active={skeletonActive || false} />
 					) : (
-						<Typography>{songPosition}</Typography>
-					)}
+						<Typography className="song_position">{songPosition}</Typography>
+					)} */}
 				</div>
 				<div className="main-song__image">
 					{skeleton === true ? (
@@ -77,29 +77,31 @@ export const Song: FC<SongProps> = props => {
 								}}
 							></SkeletonInput>
 						) : (
-							<Typography>{songName || 'songName'}</Typography>
+							<Typography className="song__name song__name--primary">{songName || 'songName'}</Typography>
 						)}
 					</div>
-					<div className="main-song__author">{songAuthor || ''}</div>
+					<div className="main-song__author">
+						<Typography className="song__author song__author--primary">{songAuthor || ''}</Typography>
+					</div>
 				</div>
 			</Space>
 			<Space className="song-space__album-and-listener">
 				{skeleton === true ? (
 					<SkeletonInput active={skeletonActive || false}></SkeletonInput>
 				) : (
-					<Typography> {listener || 1000}</Typography>
+					<Typography className="song__listener song__listener--primary"> {listener || 1000}</Typography>
 				)}
 			</Space>
-			<Space className="song-space__song-status">
+			<div className="song-space__song-status">
 				{skeleton === true ? (
 					<SkeletonInput active={skeletonActive}></SkeletonInput>
 				) : (
 					<Fragment>
 						<FontAwesomeIcon ref={refIconHeart} icon={isFavorite ? faHeartSolid : faHeartRegular} />
-						<Typography>{songTime || 10000}</Typography>
+						<Typography className="song__time song__time--primary">{songTime || 10000}</Typography>
 					</Fragment>
 				)}
-			</Space>
+			</div>
 		</div>
 	);
 };

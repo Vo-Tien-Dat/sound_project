@@ -1,0 +1,15 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../core/menu';
+.menu {
+	@include menu-container;
+	z-index: 100;
+}
+
+.menu--light {
+	background-color: $white;
+}
+
+.menu--rounded-1 {
+	border-radius: 8px;
+}

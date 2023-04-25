@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Space } from 'antd';
 import { Selector } from 'react-redux';
-import { SongProps } from '../../../../components/Song/SongsProps';
+import { SongProps } from '../../../../components/Song/SongProps';
 import { Song } from '../../../../components/Song';
 import { Songs as SongsComp } from '../../../../components/Songs';
 import './index.scss';

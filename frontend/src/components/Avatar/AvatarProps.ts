@@ -4,5 +4,6 @@ export interface AvatarProps {
 	className?: string;
 	avatarSrcImage?: string;
 	avatarName?: string;
-	menuItem?: string[] | ReactNode[];
+	data?: string[] | ReactNode[];
+	onRedirect?: (key: string) => void;
 }

@@ -1,15 +1,17 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../core/menu-item';
 .menu-item {
-	display: flex;
-	flex-direction: row;
-	padding: 8px 16px;
-	margin-bottom: 8px;
-	border-radius: 4px;
-	cursor: pointer;
-	gap: 8px;
+	@include menu-item--primary;
+}
+
+.menu-item__hover--primary:hover {
+	border-radius: 8px;
+	background-color: #959595;
 }
 
 .menu-item--active {
-	color: #ffffff;
+	color: $white;
 	font-size: 16px;
 	font-weight: 700;
 }

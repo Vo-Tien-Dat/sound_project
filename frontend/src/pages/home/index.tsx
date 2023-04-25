@@ -18,6 +18,9 @@ import {
 	CARD_VIEW_NUMBER_XL
 } from '../../utils/constants/constant';
 import { Cards } from '../../components/Cards';
+import useAuth from '../../hooks/useAuth';
+import { KEY_ACCESS_TOKEN } from '../../constant/constant';
+import { access } from 'fs';
 const { useBreakpoint } = Grid;
 const Home: FC = () => {
 	const contents = useSelector<RootState, any>(state => state.home.contents);
@@ -54,6 +57,9 @@ const Home: FC = () => {
 		dispatch(loadingDataPending({ test }));
 	}, []);
 
+	// const accessToken = useAuth(KEY_ACCESS_TOKEN);
+	// console.log(accessToken);
+
 	return (
 		<div className="ms-home-space">
 			{contents.map((currentValue: ContentState, index: number) => {
@@ -63,10 +69,13 @@ const Home: FC = () => {
 				return (
 					<div key={index} className="ms-home-content">
 						<Space direction="horizontal" className="ms-home-content__header">
-							<Typography className="ms-home-content__title">{title}</Typography>
+							<Typography className="content__title content__title--primary">{title}</Typography>
 							{hideExpandedContent && (
 								<Typography>
-									<a href="" className="ms-home-content__expanded">
+									<a
+										href=""
+										className="ms-home-content__expanded content__title content__title--primary"
+									>
 										See All
 									</a>
 								</Typography>

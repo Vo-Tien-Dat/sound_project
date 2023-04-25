@@ -1,0 +1,86 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+.song-space {
+	background-color: $black-300;
+	border-radius: 8px;
+	padding: 8px 16px;
+	display: $flex;
+}
+
+.song-space:hover {
+	background-color: $black-500;
+}
+
+.song-space__main-song {
+	display: $flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-grow: 1;
+}
+
+.main-song__position {
+	display: inline-block;
+	color: $white;
+}
+
+.song__position {
+	font-size: 16px;
+}
+
+.song__position--primary {
+	color: $white;
+}
+
+.song__name {
+	font-size: 12px;
+}
+
+.song__name--primary {
+	color: $white;
+}
+
+.song_listener {
+	font-size: 12px;
+}
+
+.song__listener--primary {
+	color: $white;
+}
+
+.song__author {
+	font-size: 12px;
+}
+
+.song__author--primary {
+	color: $white;
+}
+
+.song__time {
+	font-size: 12px;
+}
+
+.song__time--primary {
+	color: $white;
+}
+
+.main-song__image {
+	display: inline-block;
+}
+
+.main-song__parent-name {
+	display: $flex;
+	flex-direction: column;
+}
+
+.main-song__name {
+	display: inline-block;
+}
+
+.main-song__author {
+	display: inline-block;
+}
+
+.song-space__album-and-listener {
+	flex-grow: 1;
+}
