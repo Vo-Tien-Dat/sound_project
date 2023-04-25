@@ -14,8 +14,6 @@ const style: CSSProperties = {
 	backgroundColor: 'white'
 };
 
-type MenuItem = Required<Menu>;
-
 const styleAvatarMenuItem: CSSProperties = {
 	display: 'flex',
 	flexDirection: 'row',
